@@ -15,3 +15,7 @@
 - install Tailwind css
 - install daisy ui
 - added navbar component
+- install react-router-dom
+- adding routes to my page
+- added children routes
+- used Outlet in parent component to render children components
