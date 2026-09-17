@@ -1,4 +1,4 @@
-# DevTinder
+# DevTinder_UI
 
 > This is the UI for the previously built backend for the same application. Check my github repos for the same!
 
@@ -8,9 +8,10 @@
 
 - React
 - Tailwind
-- Daisy UI - a design library
+- Daisy UI
 
 #### logs
 
 - install Tailwind css
 - install daisy ui
+- added navbar component
