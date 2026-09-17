@@ -10,7 +10,7 @@
 - Tailwind
 - Daisy UI
 
-#### logs
+## logs
 
 - install Tailwind css
 - install daisy ui
