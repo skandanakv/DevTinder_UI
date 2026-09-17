@@ -19,3 +19,4 @@
 - adding routes to my page
 - added children routes
 - used Outlet in parent component to render children components
+- added footer
