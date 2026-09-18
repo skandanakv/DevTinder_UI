@@ -10,7 +10,7 @@
 - Tailwind
 - Daisy UI
 
-## logs
+## Logs
 
 - install Tailwind css
 - install daisy ui
@@ -20,3 +20,5 @@
 - added children routes
 - used Outlet in parent component to render children components
 - added footer
+- Login Page
+- handled axios error using cors()
