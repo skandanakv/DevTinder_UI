@@ -11,7 +11,7 @@ const Login = () => {
         email, password
       },{
         withCredentials: true});
-      console.log(res.data);
+      console.log(res);
     }catch(err){
       console.log(err);
     }

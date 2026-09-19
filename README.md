@@ -25,3 +25,6 @@
 - install cors in backend, and add this middleware to backend as origin and credentials:true
 - handled axios error using cors()
 - now in frontend - always pass {withcredials:true}
+
+- install redux toolkit - added redux store to save user info
+- created appStore and userSlice
