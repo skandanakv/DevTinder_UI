@@ -28,3 +28,5 @@
 
 - install redux toolkit - added redux store to save user info
 - created appStore and userSlice
+- authorisation added - login
+- logout implemented
