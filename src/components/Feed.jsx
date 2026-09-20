@@ -1,9 +1,37 @@
-
+import axios from "axios";
+import { BASE_URL } from "../utils/constants";
+import { useDispatch, useSelector } from "react-redux";
+import { addFeed } from "../utils/feedSlice";
+import { useEffect } from "react";
 
 const Feed = () => {
-  return (
-    <div>Feed</div>
-  )
-}
+    const dispatch = useDispatch();
+    const feed = useSelector((store) => store.feed);
 
-export default Feed
+const getFeed = async () => {
+    if (feed.length > 0) return;
+
+    try {
+        const res = await axios.get(BASE_URL + "feed", {
+            withCredentials: true
+        });
+
+        dispatch(addFeed(res.data));
+
+    } catch (err) {
+        console.log(err);
+    }
+};
+
+    useEffect(() => {
+        getFeed();
+    }, []);
+
+    return (
+        <div>
+            {/* display feed here */}
+        </div>
+    );
+};
+
+export default Feed;

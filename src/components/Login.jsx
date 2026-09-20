@@ -12,6 +12,7 @@ const Login = () => {
   const [password, setPassword] = useState('Vijay@123');
   const dispatch=useDispatch();
   const navigate=useNavigate();
+  const[err,setErr]=useState('');
 
   const handleLogin = async () => {
     try{
@@ -25,6 +26,7 @@ const Login = () => {
       dispatch(addUser(res.data));
       navigate("/");
     }catch(err){
+      setErr(err.response.data);
       console.log(err);
       
     }
@@ -68,6 +70,7 @@ return (
           onClick={handleLogin}>
             Login
           </button>
+          <div className="text-red-500 text-center">{err}</div>
         </div>
 
       </div>
