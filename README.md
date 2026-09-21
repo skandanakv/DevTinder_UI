@@ -34,3 +34,5 @@
 - got feed and added it in the redux store
 - built userCard
 - edit profile page created with a preiew option
+- connections page - see all the connections
+- created a connection slice to store connection data
