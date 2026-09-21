@@ -30,3 +30,6 @@
 - created appStore and userSlice
 - authorisation added - login
 - logout implemented
+- built feed page
+- got feed and added it in the redux store
+- built userCard
