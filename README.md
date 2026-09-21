@@ -33,3 +33,4 @@
 - built feed page
 - got feed and added it in the redux store
 - built userCard
+- edit profile page created with a preiew option
