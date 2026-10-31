@@ -1,4 +1,4 @@
-const UserCard = ({ user, onInterested, onIgnore }) => {
+const UserCard = ({ user, handleSendRequest }) => {
   const { firstName, lastName, photoUrl, age, gender, about, skills } = user;
 
   const skillList = (skills || [])
@@ -53,18 +53,18 @@ const UserCard = ({ user, onInterested, onIgnore }) => {
 
 
           <div className="card-actions mt-2 grid grid-cols-2 gap-3">
-            <button
-              className="btn btn-outline btn-error"
-              onClick={onIgnore}
-            >
-              Ignore
-            </button>
-            <button
-              className="btn btn-primary"
-              onClick={onInterested}
-            >
-              Interested
-            </button>
+           <button
+  className="btn btn-outline btn-error"
+  onClick={() => handleSendRequest("ignored", user._id)}
+>
+  Ignore
+</button>
+<button
+  className="btn btn-primary"
+  onClick={() => handleSendRequest("interested", user._id)}
+>
+  Interested
+</button>
           </div>
         </div>
       </div>

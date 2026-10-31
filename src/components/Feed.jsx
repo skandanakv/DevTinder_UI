@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { addFeed } from "../utils/feedSlice";
 import { useEffect } from "react";
 import UserCard from "./UserCard";
+import { removeUserFromFeed } from "../utils/feedSlice";
+
 
 const Feed = () => {
     const dispatch = useDispatch();
@@ -19,6 +21,18 @@ const getFeed = async () => {
     }
 };
 
+const handleSendRequest = async (status, _id) => {
+    try{
+        const res = await axios.post(BASE_URL + "request/send/"+ status+"/"+ _id, {}, { withCredentials: true });
+        console.log(res.data);
+        dispatch(removeUserFromFeed(_id));
+
+    }catch(err){
+        console.log(err);
+    }
+};
+
+
     useEffect(() => {
         getFeed();
     }, []);
@@ -26,7 +40,13 @@ const getFeed = async () => {
     return(
          feed && (
         <div>
-            {feed.length > 0 && <UserCard user={feed[0]} />}
+            {feed.length > 0 ? (
+                <UserCard user={feed[0]} handleSendRequest={handleSendRequest} />
+            ) : (
+                <h1 className="text-xl font-bold my-10 text-center">
+                    No new users right now
+                </h1>
+            )}
         </div>
     )
 );
