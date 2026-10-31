@@ -36,4 +36,6 @@
 - edit profile page created with a preiew option
 - connections page - see all the connections
 - created a connection slice to store connection data
-- requests page w request slice implemented
+- requests page w request slice implemente
+- new page for requests and connections implemented
+-
