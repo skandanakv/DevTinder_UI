@@ -10,6 +10,9 @@ import { BASE_URL } from "../utils/constants";
 const Login = () => {
   const [email, setEmail] = useState('vijay@gmail.com');
   const [password, setPassword] = useState('Vijay@123');
+  const [firstName, setFirstName] = useState('Vijay');
+  const [lastName, setLastName] = useState('Kumar');
+  const[IsLoginForm, setIsLoginForm] = useState(true);
   const dispatch=useDispatch();
   const navigate=useNavigate();
   const[err,setErr]=useState('');
@@ -38,10 +41,35 @@ return (
       <div className="card-body gap-4">
 
         <h2 className="card-title justify-center text-2xl">
-          Login
+          {IsLoginForm ? "Login" : "Sign Up"}
         </h2>
 
         <div>
+{ !IsLoginForm && <>
+          <fieldset className="fieldset">
+            <legend className="fieldset-legend">First Name</legend>
+            <input
+              type="text"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+              className="input w-full"
+              placeholder="Enter your first name"
+            />
+          </fieldset>
+
+          <fieldset className="fieldset">
+            <legend className="fieldset-legend">Last Name</legend>
+            <input
+              type="text"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+              className="input w-full"
+              placeholder="Enter your last name"
+            />
+          </fieldset>
+          </>
+          }
+          
           <fieldset className="fieldset">
             <legend className="fieldset-legend">Email ID</legend>
             <input
@@ -52,6 +80,7 @@ return (
               placeholder="Enter your email"
             />
           </fieldset>
+          
 
           <fieldset className="fieldset">
             <legend className="fieldset-legend">Password</legend>
@@ -68,10 +97,12 @@ return (
         <div className="card-actions justify-center mt-2">
           <button className="btn btn-primary w-full "
           onClick={handleLogin}>
-            Login
+            {IsLoginForm ? "Login" : "Sign Up"}
           </button>
           <div className="text-red-500 text-center">{err}</div>
         </div>
+
+        <div className="">{IsLoginForm ? "Don't have an account?" : "Already have an account?"} <button className="btn btn-link" onClick={() => setIsLoginForm(!IsLoginForm)}>{IsLoginForm ? "Sign Up" : "Login"}</button></div>
 
       </div>
     </div>
